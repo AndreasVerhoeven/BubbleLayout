@@ -86,6 +86,11 @@ class Bubble extends Drawable {
         return (int) mRect.height();
     }
 
+	@Override
+	public void getOutline (Outline outline) {
+		outline.setConvextPath(mPath);
+	}
+
     private void initPath(ArrowDirection arrowDirection, Path path, float strokeWidth) {
         switch (arrowDirection) {
             case LEFT:
