@@ -58,6 +58,14 @@ public class BubbleLayout extends FrameLayout {
 
         a.recycle();
         initPadding();
+
+		setOutlineProvider(new ViewOutlineProvider() {
+			@Override
+			public void getOutline(View view, Outline outline) {
+				if(mBubble != null)
+					mBubble.getOutline(outline);
+            }
+        });
     }
 
     @Override
@@ -243,5 +251,5 @@ public class BubbleLayout extends FrameLayout {
 
     public int getStrokeColor() {
         return mStrokeColor;
-    }
+    } 
 }
